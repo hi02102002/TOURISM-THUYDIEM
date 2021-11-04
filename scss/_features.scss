@@ -1,0 +1,27 @@
+.features {
+  padding: 3rem 0;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+
+    li {
+      max-width: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+    img {
+      margin-bottom: 1rem;
+    }
+
+    .content {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}
