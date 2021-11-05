@@ -1,0 +1,66 @@
+.subscribe {
+  background-color: #4e9f3d;
+  padding: 3rem 0;
+  & > .container {
+    max-width: 1170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 50%;
+    @media screen and (max-width: 767px) {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  form {
+    width: 50%;
+    display: flex;
+    align-items: stretch;
+
+    @media screen and (max-width: 767px) {
+      width: 90%;
+      flex-direction: column;
+    }
+
+    input {
+      flex: 1;
+      padding: 1.5rem;
+      border: 0;
+      outline: 0;
+      border-radius: 1.6rem 0 0 1.6rem;
+      @media screen and (max-width: 767px) {
+        border-radius: 1.6rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    button {
+      padding: 0 3rem;
+      border-radius: 0 1.6rem 1.6rem 0;
+      border: 0;
+      outline: 0;
+      background-color: #fcb833;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+      white-space: nowrap;
+
+      @media screen and (max-width: 767px) {
+        border-radius: 1.6rem;
+        padding: 1.5rem;
+      }
+    }
+  }
+}

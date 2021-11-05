@@ -71,6 +71,11 @@ ul {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .header__nav {
+    display: none;
+  }
+}
 .header__nav li:not(:last-child) {
   margin-right: 3rem;
 }
@@ -83,7 +88,26 @@ ul {
 .header__nav-link:hover {
   color: #1e5128;
 }
+.header__toggle {
+  font-size: 3rem;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__toggle {
+    display: block;
+  }
+}
 
+.banner > .container {
+  max-width: 100%;
+  padding: 0;
+}
+@media screen and (min-width: 1920px) {
+  .banner > .container {
+    max-width: 1470px;
+    margin: 0 auto;
+  }
+}
 .banner .swiper-pagination-bullet {
   width: 1.2rem;
   height: 1.2rem;
@@ -92,15 +116,37 @@ ul {
   background-color: #4e9f3d;
 }
 
+.banner-main > .container {
+  max-width: 100%;
+  padding: 0;
+}
+@media screen and (min-width: 1920px) {
+  .banner-main > .container {
+    max-width: 1470px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search-box > .container {
+    padding: 0;
+  }
+}
 .search-box .tab-tours {
-  display: flex;
-  align-items: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   max-width: 80rem;
   margin: 0 auto;
   background-color: #4e9f3d;
   border-radius: 0 0 1.6rem 1.6rem;
+  justify-items: center;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .search-box .tab-tours {
+    border-radius: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .search-box .tab-tour {
   padding: 1rem 2rem;
@@ -130,13 +176,23 @@ ul {
   place-items: center;
 }
 .features__list li {
-  max-width: 10rem;
+  width: 100%;
+}
+.features__list li > div {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  display: block;
   text-align: center;
+}
+.features__list li img {
+  max-width: 10rem;
+}
+@media screen and (max-width: 767px) {
+  .features__list li img {
+    max-width: 5rem;
+  }
 }
 .features__list img {
   margin-bottom: 1rem;
@@ -144,10 +200,17 @@ ul {
 .features__list .content {
   text-transform: uppercase;
   font-weight: 500;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .tours {
   padding: 6rem 0;
+}
+@media screen and (max-width: 767px) {
+  .tours {
+    padding: 3rem 0;
+  }
 }
 .tours > .container {
   max-width: 1170px;
@@ -162,6 +225,11 @@ ul {
   margin-bottom: 6rem;
   width: max-content;
 }
+@media screen and (max-width: 767px) {
+  .tours__title {
+    margin-bottom: 4rem;
+  }
+}
 .tours__title::after {
   content: "";
   width: 70%;
@@ -172,8 +240,11 @@ ul {
   left: 50%;
   transform: translateX(-50%);
 }
+.tours__title:hover {
+  color: #4e9f3d;
+}
 .tours__swiper {
-  padding: 0 1.5rem;
+  padding: 1.5rem;
   padding-bottom: 5rem;
 }
 .tours .swiper-slide {
@@ -191,6 +262,37 @@ ul {
   flex-direction: column;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.tours__item .price {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1.5rem;
+  top: -1.5rem;
+  background-color: #4e9f3d;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.tours__item .price::after, .tours__item .price::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  background-color: #3b772f;
+  top: 0;
+}
+.tours__item .price::after {
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  left: -1.5rem;
+}
+.tours__item .price::before {
+  right: -1.5rem;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 .tours__item-img {
   height: 20rem;
@@ -220,6 +322,10 @@ ul {
   -webkit-box-orient: vertical;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  transition: all 0.3s;
+}
+.tours__item-bottom .title:hover {
+  color: #4e9f3d;
 }
 .tours__item-bottom .content {
   margin-top: auto;
@@ -244,6 +350,240 @@ ul {
 .tours__item-bottom .info li span {
   text-transform: uppercase;
   font-size: 1.4rem;
+}
+
+.subscribe {
+  background-color: #4e9f3d;
+  padding: 3rem 0;
+}
+.subscribe > .container {
+  max-width: 1170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .subscribe > .container {
+    flex-direction: column;
+  }
+}
+.subscribe__title {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .subscribe__title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+.subscribe form {
+  width: 50%;
+  display: flex;
+  align-items: stretch;
+}
+@media screen and (max-width: 767px) {
+  .subscribe form {
+    width: 90%;
+    flex-direction: column;
+  }
+}
+.subscribe form input {
+  flex: 1;
+  padding: 1.5rem;
+  border: 0;
+  outline: 0;
+  border-radius: 1.6rem 0 0 1.6rem;
+}
+@media screen and (max-width: 767px) {
+  .subscribe form input {
+    border-radius: 1.6rem;
+    margin-bottom: 2rem;
+  }
+}
+.subscribe form button {
+  padding: 0 3rem;
+  border-radius: 0 1.6rem 1.6rem 0;
+  border: 0;
+  outline: 0;
+  background-color: #fcb833;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+}
+@media screen and (max-width: 767px) {
+  .subscribe form button {
+    border-radius: 1.6rem;
+    padding: 1.5rem;
+  }
+}
+
+.attraction-favorite {
+  padding: 6rem 0;
+}
+@media screen and (max-width: 767px) {
+  .attraction-favorite {
+    padding: 3rem 0;
+  }
+}
+.attraction-favorite > .container {
+  max-width: 1170px;
+}
+.attraction-favorite .title {
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #4e9f3d;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  width: max-content;
+}
+@media screen and (max-width: 767px) {
+  .attraction-favorite .title {
+    margin-bottom: 4rem;
+  }
+}
+.attraction-favorite .title::after {
+  content: "";
+  width: 70%;
+  height: 3px;
+  background-color: #4e9f3d;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.attraction-favorite__list {
+  --col: 4;
+  --gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-right: calc(-1 * var(--gap));
+}
+@media screen and (max-width: 1023px) {
+  .attraction-favorite__list {
+    --col: 3;
+  }
+}
+@media screen and (max-width: 767px) {
+  .attraction-favorite__list {
+    --col: 2;
+  }
+}
+@media screen and (max-width: 460px) {
+  .attraction-favorite__list {
+    --col: 1;
+    column-gap: 0;
+  }
+}
+.attraction-favorite li {
+  width: calc(100% / var(--col) - var(--gap));
+  height: 27rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.attraction-favorite li::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.attraction-favorite li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.attraction-favorite li .name {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 2;
+  white-space: nowrap;
+}
+.attraction-favorite li:hover img {
+  transform: scale(1.1);
+}
+
+.footer {
+  padding: 6rem 0;
+  background-color: #e8e1d9;
+}
+.footer > .container {
+  max-width: 1170px;
+  display: flex;
+  flex-direction: column;
+}
+.footer .logo {
+  max-width: 16rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.footer__row {
+  --col: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .footer__row {
+    --col: 1;
+  }
+}
+.footer__col {
+  width: calc(100% / var(--col));
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -2rem;
+}
+.footer__col ul li a {
+  color: #191a19;
+}
+@media screen and (max-width: 767px) {
+  .footer__col {
+    margin-bottom: 2rem;
+  }
+}
+.footer__title {
+  margin-bottom: 2rem;
+}
+.footer__col ul li,
+.footer .phone,
+.footer .address,
+.footer .email {
+  margin-bottom: 2rem;
+}
+.footer .confirm {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.footer .confirm img {
+  max-width: 12rem;
+}
+.footer .confirm img:last-child {
+  max-width: 4rem;
+  margin-left: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

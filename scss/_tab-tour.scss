@@ -1,13 +1,23 @@
 .search-box {
+  & > .container {
+    @media screen and (max-width: 767px) {
+      padding: 0;
+    }
+  }
   .tab-tours {
-    display: flex;
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     max-width: 80rem;
     margin: 0 auto;
     background-color: #4e9f3d;
     border-radius: 0 0 1.6rem 1.6rem;
+    justify-items: center;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      border-radius: 0;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .tab-tour {

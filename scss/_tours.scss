@@ -1,6 +1,10 @@
 .tours {
   padding: 6rem 0;
 
+  @media screen and (max-width: 767px) {
+    padding: 3rem 0;
+  }
+
   & > .container {
     max-width: 1170px;
   }
@@ -14,6 +18,10 @@
     margin-bottom: 6rem;
     width: max-content;
 
+    @media screen and (max-width: 767px) {
+      margin-bottom: 4rem;
+    }
+
     &::after {
       content: '';
       width: 70%;
@@ -24,10 +32,14 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
+    &:hover {
+      color: #4e9f3d;
+    }
   }
 
   &__swiper {
-    padding: 0 1.5rem;
+    padding: 1.5rem;
     padding-bottom: 5rem;
   }
   .swiper-slide {
@@ -48,6 +60,42 @@
     flex-direction: column;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     height: 100%;
+    cursor: pointer;
+    position: relative;
+
+    .price {
+      position: absolute;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+      padding: 1.5rem;
+      top: -1.5rem;
+      background-color: #4e9f3d;
+      z-index: 10;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+
+      &::after,
+      &::before {
+        content: '';
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        background-color: rgba($color: #3b772f, $alpha: 1);
+        top: 0;
+      }
+
+      &::after {
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        left: -1.5rem;
+      }
+
+      &::before {
+        right: -1.5rem;
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+      }
+    }
 
     &-img {
       height: 20rem;
@@ -79,6 +127,11 @@
       -webkit-box-orient: vertical;
       line-height: 1.2;
       margin-bottom: 1.5rem;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #4e9f3d;
+      }
     }
 
     &-bottom .content {
