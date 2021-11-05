@@ -1,6 +1,9 @@
 .footer {
   padding: 6rem 0;
   background-color: #e8e1d9;
+  @media screen and (max-width: 767px) {
+    padding: 3rem 0;
+  }
   & > .container {
     max-width: 1170px;
     display: flex;
