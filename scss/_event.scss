@@ -1,0 +1,37 @@
+.event {
+  padding-top: 6rem;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 3rem;
+  }
+
+  .title {
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #4e9f3d;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    width: max-content;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 4rem;
+    }
+
+    &::after {
+      content: '';
+      width: 70%;
+      height: 3px;
+      background-color: #4e9f3d;
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+      color: #4e9f3d;
+    }
+  }
+}

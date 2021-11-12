@@ -522,6 +522,43 @@ ul {
   transform: scale(1.1);
 }
 
+.event {
+  padding-top: 6rem;
+}
+@media screen and (max-width: 767px) {
+  .event {
+    padding-top: 3rem;
+  }
+}
+.event .title {
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #4e9f3d;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  width: max-content;
+}
+@media screen and (max-width: 767px) {
+  .event .title {
+    margin-bottom: 4rem;
+  }
+}
+.event .title::after {
+  content: "";
+  width: 70%;
+  height: 3px;
+  background-color: #4e9f3d;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.event .title:hover {
+  color: #4e9f3d;
+}
+
 .footer {
   padding: 6rem 0;
   background-color: #e8e1d9;
